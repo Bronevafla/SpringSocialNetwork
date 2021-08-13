@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>People</title>
+</head>
+<body>
+<!-- edit(........) В скобках - то, что хотим получить из модели.
+Т.к при переходе на страницу /show в модели уже лежит объект person -->
+    <p th:text="${person.getName()}">Value</p>
+    <p th:text="${person.getId()}">Value</p>
+
+    <!-- С помощью тега <a> только GET - запросы -->
+    <a th:href="@{/people/{id}/edit(id=${person.getId()})}">Edit</a>
+
+    <!-- {id}  (id=${person.getId()} В круглых скобках - id человека, на странице которого находимся -->
+    <form th:method="DELETE" th:action="@{/people/{id}(id=${person.getId()})}">
+        <input type="submit" value="Delete"/>
+    </form>
+</body>
+</html>

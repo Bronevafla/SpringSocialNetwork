@@ -1,0 +1,10 @@
+out
+.idea/**/*
+*.iml
+.idea/*
+.build/*
+.gradle/*
+build/*
+/gradle/
+application.conf
+
